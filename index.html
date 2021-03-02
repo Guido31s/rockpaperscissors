@@ -2,14 +2,46 @@
 <html>
 <body>
     <script>
- 
+
+playerQuestion = prompt("Rock Paper or Scissors?").toLowerCase();
+playerAnswer = playerQuestion
 const pcElection = ["Rock", "Paper", "Scissors"];
 
 function computerPlay() {
   return pcElection[~~(Math.random() * pcElection.length)];
 }
 
+const playerSelection = playerAnswer;
+const pcSelection = computerPlay();
+function singleRound(playerSelection, pcSelection) {
+
+  if (pcSelection === "Rock" && playerSelection === "paper") {
+    alert("EL PAPEL GANA SABES");
+
+  } else if (pcSelection === "Paper" && playerSelection === "scissors") {
+    alert("LA TIJERA CORTA EL PAPEL SABES");
+
+  } else if (pcSelection === "Scissors" && playerSelection === "rock") {
+    alert("TU TIJERA FUE DESTRUIDA POR MI PIEDRA SABES");
+  
+  } else if (playerSelection === "rock" && pcSelection === "Paper") {
+    alert("TE HAN ENVUELTO TU ROCA EN PAPEL SABES");
+
+  } else if (playerSelection === "paper" && pcSelection === "Scissors") {
+    alert("TU PAPEL HA SIDO CORTADO EN PEDAZITOS SABES");
+
+  } else if (playerSelection === "scissors" && pcSelection === "Rock") {
+    alert("NOOO MI TIJERAAA, ERA NUEVA");
+    
+  } else alert("Empataste XD");
+  
+  console.log(playerSelection, pcSelection);
+  
+} 
+
+console.log(singleRound(playerSelection, pcSelection));
+
 
     </script>
 </body>
-</html>
+</html> 
