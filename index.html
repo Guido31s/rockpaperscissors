@@ -2,46 +2,74 @@
 <html>
 <body>
     <script>
-
+function playerPick(){
+ let pick = true; 
+ let playerQuestion
+ while(pick){
 playerQuestion = prompt("Rock Paper or Scissors?").toLowerCase();
-playerAnswer = playerQuestion
+if (playerQuestion == "rock", "paper", "scissors"){
+  return playerQuestion;
+}
+}
+}
 const pcElection = ["Rock", "Paper", "Scissors"];
 
 function computerPlay() {
   return pcElection[~~(Math.random() * pcElection.length)];
 }
 
-const playerSelection = playerAnswer;
+const playerSelection = playerPick();
 const pcSelection = computerPlay();
 function singleRound(playerSelection, pcSelection) {
 
   if (pcSelection === "Rock" && playerSelection === "paper") {
-    alert("EL PAPEL GANA SABES");
+    alert("You win! Paper beats Rock ");
 
   } else if (pcSelection === "Paper" && playerSelection === "scissors") {
-    alert("LA TIJERA CORTA EL PAPEL SABES");
+    alert("You win! Scissors beats Paper");
 
   } else if (pcSelection === "Scissors" && playerSelection === "rock") {
-    alert("TU TIJERA FUE DESTRUIDA POR MI PIEDRA SABES");
+    alert("You win! Rock beats Scissors");
   
   } else if (playerSelection === "rock" && pcSelection === "Paper") {
-    alert("TE HAN ENVUELTO TU ROCA EN PAPEL SABES");
+    alert("You lose! Paper beats Rock");
 
   } else if (playerSelection === "paper" && pcSelection === "Scissors") {
-    alert("TU PAPEL HA SIDO CORTADO EN PEDAZITOS SABES");
+    alert("You lose! Scissors beats Paper");
 
   } else if (playerSelection === "scissors" && pcSelection === "Rock") {
-    alert("NOOO MI TIJERAAA, ERA NUEVA");
+    alert("You lose! Rock beats Scissors");
     
-  } else alert("Empataste XD");
+  } else alert("It's a tie!");
   
   console.log(playerSelection, pcSelection);
   
 } 
+function game() {
 
-console.log(singleRound(playerSelection, pcSelection));
-
-
-    </script>
+  let playerPoints = 0;
+  let computerPoints = 0; 
+  let tiePoints = 0; 
+  let playerSelection;
+  for(i = 0; i < 5; i++){
+    playerSelection = playerPick();
+    computerPlay();
+    if(pcSelection === "Rock" && playerSelection === "paper" || pcSelection === "Paper" && playerSelection === "scissors" || pcSelection === "Scissors" && playerSelection === "rock"){
+      console.log(singleRound(playerSelection, pcSelection))
+      playerPoints++;
+    } else if (playerSelection === "rock" && pcSelection === "Paper" || playerSelection === "paper" && pcSelection === "Scissors" || playerSelection === "scissors" && pcSelection === "Rock"){
+      console.log(singleRound(playerSelection, pcSelection))
+      computerPoints++;
+    } else {
+      console.log(singleRound(playerSelection, pcSelection))
+      tiePoints++;
+    } 
+console.log("Player have: " + playerPoints + " points!");  
+console.log("Pc have: " + computerPoints + " points!");  
+console.log("Tie " + tiePoints + " times");
+} 
+}
+game();
+</script>
 </body>
-</html> 
+  </html>
