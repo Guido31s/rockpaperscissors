@@ -18,12 +18,12 @@ function computerPlay() {
   return pcElection[~~(Math.random() * pcElection.length)];
 }
 
-const playerSelection = playerPick();
-const pcSelection = computerPlay();
+let playerSelection = playerPick();
+let pcSelection = computerPlay();
 function singleRound(playerSelection, pcSelection) {
 
   if (pcSelection === "Rock" && playerSelection === "paper") {
-    alert("You win! Paper beats Rock ");
+    alert("You win! Paper beats Rock");
 
   } else if (pcSelection === "Paper" && playerSelection === "scissors") {
     alert("You win! Scissors beats Paper");
@@ -53,7 +53,7 @@ function game() {
   let playerSelection;
   for(i = 0; i < 5; i++){
     playerSelection = playerPick();
-    computerPlay();
+    pcSelection = computerPlay();
     if(pcSelection === "Rock" && playerSelection === "paper" || pcSelection === "Paper" && playerSelection === "scissors" || pcSelection === "Scissors" && playerSelection === "rock"){
       console.log(singleRound(playerSelection, pcSelection))
       playerPoints++;
@@ -68,6 +68,11 @@ console.log("Player have: " + playerPoints + " points!");
 console.log("Pc have: " + computerPoints + " points!");  
 console.log("Tie " + tiePoints + " times");
 } 
+if(playerPoints < computerPoints) {
+  alert("You lose! try again")
+} else if (playerPoints > computerPoints) {
+  alert("Congratulations! You Win!")
+} else alert("OMG IT'S A TIE!")
 }
 game();
 </script>
