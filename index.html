@@ -12,9 +12,10 @@ if (playerQuestion == "rock", "paper", "scissors"){
 }
 }
 }
-const pcElection = ["Rock", "Paper", "Scissors"];
+
 
 function computerPlay() {
+  let pcElection = ["Rock", "Paper", "Scissors"];
   return pcElection[~~(Math.random() * pcElection.length)];
 }
 
@@ -74,6 +75,7 @@ if(playerPoints < computerPoints) {
   alert("Congratulations! You Win!")
 } else alert("OMG IT'S A TIE!")
 }
+
 game();
 </script>
 </body>
