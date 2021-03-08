@@ -9,8 +9,8 @@ function playerPick(){
 playerQuestion = prompt("Rock Paper or Scissors?").toLowerCase();
 if (playerQuestion == "rock", "paper", "scissors"){
   return playerQuestion;
-}
-}
+    }
+  }
 }
 
 
@@ -51,7 +51,6 @@ function game() {
   let playerPoints = 0;
   let computerPoints = 0; 
   let tiePoints = 0; 
-  let playerSelection;
   for(i = 0; i < 5; i++){
     playerSelection = playerPick();
     pcSelection = computerPlay();
@@ -65,10 +64,12 @@ function game() {
       console.log(singleRound(playerSelection, pcSelection))
       tiePoints++;
     } 
+
 console.log("Player have: " + playerPoints + " points!");  
 console.log("Pc have: " + computerPoints + " points!");  
 console.log("Tie " + tiePoints + " times");
 } 
+
 if(playerPoints < computerPoints) {
   alert("You lose! try again")
 } else if (playerPoints > computerPoints) {
